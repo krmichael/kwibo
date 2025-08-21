@@ -81,7 +81,7 @@
     .step b{color:#fff}
 
     .trust{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;opacity:.95}
-    .pill{border:1px dashed rgba(255,255,255,.25);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px;background:rgba(255,255,255,.03)}
+    .pill{border:1px dashed rgba(255,255,255,.25);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px;background:rgba(255,255,255,.03);display:flex;justify-content:center;align-items:center}
 
     details{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:16px;border-radius:16px}
     summary{cursor:pointer;font-weight:600}
@@ -121,7 +121,7 @@
       <div style="display:flex;gap:12px;align-items:center">
         <a class="mini-link" href="#como-funciona">Como funciona</a>
         <a class="mini-link" href="#faq">FAQ</a>
-        <a class="cta" href="https://play.google.com/store/apps/details?id=com.kwai.video.downloader.nowatermark" rel="nofollow noopener" target="_blank" aria-label="Baixar Kwibo na Play Store">
+        <a class="cta mobile-header" href="https://play.google.com/store/apps/details?id=com.kwai.video.downloader.nowatermark" rel="nofollow noopener" target="_blank" aria-label="Baixar Kwibo na Play Store">
           <!-- Play icon -->
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
           Baixar na Play Store
@@ -234,7 +234,7 @@
     </section>
 
     <footer class="container footer">
-      <p>© <span id="y"></span> Kwibo. Todos os direitos reservados. • <a class="mini-link" href="#" aria-disabled="true">Política de Privacidade</a> • <a class="mini-link" href="https://ttdownloader.vercel.app/kwai-downloader/privacy-policy" rel="nofollow noopener" target="_blank" aria-disabled="true">Suporte</a></p>
+      <p>© <span id="y"></span> Kwibo. Todos os direitos reservados. • <a class="mini-link" href="https://ttdownloader.vercel.app/kwai-downloader/privacy-policy" rel="nofollow noopener" target="_blank" aria-disabled="true">Política de Privacidade</a> • <a class="mini-link" href="https://www.linkedin.com/in/leandrols/" rel="nofollow noopener" target="_blank" aria-disabled="true">Suporte</a></p>
     </footer>
   </main>
 
@@ -243,6 +243,18 @@
     document.getElementsByClassName('logo-wrap')[0].addEventListener('click', function() {
       window.location.replace('/kwibo')
     });
+
+    function isMobileByUserAgent() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      if (/android|ipad|iphone|ipod|blackberry|webos|iemobile|opera mini/i.test(userAgent)) {
+        return true;
+      }
+      return false;
+    }
+
+    if (isMobileByUserAgent()) {
+      document.querySelector('.mobile-header').style.display = 'none';
+    }
   </script>
 </body>
 </html>

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kwibo — Baixar vídeos do Kwai sem marca d’água</title>
+  <meta name="description" content="Kwibo: baixe vídeos do Kwai sem marca d’água em segundos. Qualidade HD, rápido, simples e gratuito. Compatível com Android. Baixe agora na Play Store!" />
+  <link rel="canonical" href="https://kwibo.github.io/" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kwibo — Baixar vídeos do Kwai sem marca d’água" />
+  <meta property="og:description" content="Baixe vídeos do Kwai sem marca d’água, em HD, grátis e em segundos. Clique e instale agora." />
+  <meta property="og:url" content="https://kwibo.github.io/" />
+  <meta property="og:image" content="https://kwibo.github.io/og-image.png" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kwibo — Baixar vídeos do Kwai sem marca d’água" />
+  <meta name="twitter:description" content="Baixe vídeos do Kwai sem marca d’água, em HD, grátis e em segundos." />
+  <meta name="twitter:image" content="https://kwibo.github.io/og-image.png" />
+
+  <!-- PWA basics (optional placeholders) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230F172A'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='52' fill='%23fff' font-family='Arial, Helvetica, sans-serif'%3EK%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: rgba(255,255,255,0.06);
+      --text: #e6e9f0;
+      --muted: #b6bdd3;
+      --brand: #7c3aed; /* violet-600 */
+      --brand-2: #22d3ee; /* cyan-400 */
+      --ok: #10b981; /* emerald-500 */
+      --warn: #f59e0b; /* amber-500 */
+      --shadow: 0 20px 40px rgba(2,6,23,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(124,58,237,.35), transparent 60%),
+                  radial-gradient(900px 500px at 110% 20%, rgba(34,211,238,.25), transparent 60%),
+                  linear-gradient(180deg, #0b1020, #060913 60%);
+      background-attachment: fixed;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:48px 0}
+    @media (max-width: 900px){.hero{grid-template-columns:1fr;}}
+
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(124,58,237,.15);color:#e9d5ff;border:1px solid rgba(124,58,237,.35);backdrop-filter: blur(6px)}
+
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .glass{backdrop-filter: blur(10px)}
+    .title{font-weight:800;letter-spacing:-0.02em;font-size: clamp(28px, 5vw, 52px);line-height:1.05;margin:16px 0}
+    .subtitle{color:var(--muted);font-size: clamp(16px, 2.3vw, 18px);line-height:1.6;margin: 0 0 24px}
+
+    .cta{display:inline-flex;align-items:center;gap:12px;padding:14px 20px;border-radius:14px;border:none;cursor:pointer;font-weight:700;font-size:16px;color:#0b1020;text-decoration:none;background:linear-gradient(90deg, var(--brand), var(--brand-2));box-shadow: 0 10px 24px rgba(124,58,237,.35)}
+    .cta:hover{transform:translateY(-1px)}
+    .cta:active{transform:translateY(0)}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+    @media (max-width: 900px){.features{grid-template-columns:1fr 1fr}}
+    @media (max-width: 600px){.features{grid-template-columns:1fr}}
+
+    .feature{padding:18px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+    .feature h3{margin:10px 0 6px;font-size:18px}
+    .feature p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+
+    .how{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+    @media (max-width: 900px){.how{grid-template-columns:1fr}}
+    .step{padding:18px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+    .step b{color:#fff}
+
+    .trust{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;opacity:.95}
+    .pill{border:1px dashed rgba(255,255,255,.25);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px;background:rgba(255,255,255,.03)}
+
+    details{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:16px;border-radius:16px}
+    summary{cursor:pointer;font-weight:600}
+
+    .footer{opacity:.8;color:var(--muted);font-size:13px;margin:28px 0 12px}
+    .grid{display:grid;gap:18px}
+
+    .logo-wrap{display:flex;align-items:center;gap:12px}
+    .logo{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg, rgba(124,58,237,.9), rgba(34,211,238,.9));box-shadow:0 10px 24px rgba(2,6,23,.25)}
+    .logo span{font-weight:800;color:#0b1020}
+
+    .mini-link{color:#c7d2fe}
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Kwibo",
+    "operatingSystem": "Android",
+    "applicationCategory": "MultimediaApplication",
+    "description": "Baixe vídeos do Kwai sem marca d’água em segundos. Qualidade HD, rápido, simples e gratuito.",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.kwai.video.downloader.nowatermark",
+    "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "1200"}
+  }
+  </script>
+</head>
+<body>
+  <header class="container" style="padding-top:24px">
+    <nav class="card glass" style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px">
+      <div class="logo-wrap">
+        <div class="logo"><span>K</span></div>
+        <strong>Kwibo</strong>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="mini-link" href="#como-funciona">Como funciona</a>
+        <a class="mini-link" href="#faq">FAQ</a>
+        <a class="cta" href="https://play.google.com/store/apps/details?id=com.kwai.video.downloader.nowatermark" rel="nofollow noopener" target="_blank" aria-label="Baixar Kwibo na Play Store">
+          <!-- Play icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
+          Baixar na Play Store
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="badge">⚡ Rápido • HD • Sem marca d’água</span>
+        <h1 class="title">Baixe vídeos do <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Kwai</span> sem marca d’água</h1>
+        <p class="subtitle">O <b>Kwibo</b> é o app ideal para salvar qualquer vídeo do Kwai em <b>qualidade máxima</b>, <b>rápido</b>, <b>simples</b> e <b>100% gratuito</b>. Compartilhe no WhatsApp, Instagram, Facebook e Status — sem marcas d’água.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="cta" href="https://play.google.com/store/apps/details?id=com.kwai.video.downloader.nowatermark" rel="nofollow noopener" target="_blank">Baixar gratuitamente</a>
+          <div class="pill">Sem cadastro</div>
+          <div class="pill">Compatível com Android</div>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <h3>Sem marca d’água</h3>
+            <p>Remova as marcas d’água e baixe o vídeo limpo, pronto para publicar onde quiser.</p>
+          </div>
+          <div class="feature">
+            <h3>Qualidade HD</h3>
+            <p>Arquivos leves com qualidade alta, mantendo áudio e imagem nítidos.</p>
+          </div>
+          <div class="feature">
+            <h3>Rápido e gratuito</h3>
+            <p>Baixe em segundos, sem taxas e sem complicação.</p>
+          </div>
+          <div class="feature">
+            <h3>Compatível com Android</h3>
+            <p>Funciona nos principais dispositivos Android e versões recentes do sistema.</p>
+          </div>
+          <div class="feature">
+            <h3>Compartilhe fácil</h3>
+            <p>Envie diretamente para WhatsApp, Instagram, Facebook e Status.</p>
+          </div>
+          <div class="feature">
+            <h3>Extras exclusivos</h3>
+            <p>Acesse coleções com vídeos de <b>Bom Dia</b>, <b>Boa Tarde</b> e <b>Boa Noite</b>.</p>
+          </div>
+        </div>
+
+        <div class="trust">
+          <div class="pill">⭐ Média 4.8/5</div>
+          <div class="pill">🔒 Seguro e confiável</div>
+          <div class="pill">⚙️ Interface simples</div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card glass" style="padding:18px">
+          <video style="width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.12)" autoplay muted loop playsinline poster="">
+            <source src="" type="video/mp4" />
+          </video>
+          <div style="display:grid;gap:10px;margin-top:14px">
+            <div class="step"><b>1.</b> Copie o link do vídeo do Kwai.</div>
+            <div class="step"><b>2.</b> Cole no Kwibo e toque em <i>Baixar</i>.</div>
+            <div class="step"><b>3.</b> Pronto! Vídeo salvo em HD, sem marca d’água.</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="como-funciona" class="grid" style="margin-top:10px">
+      <h2 class="title" style="font-size:28px">Como funciona</h2>
+      <div class="how">
+        <div class="step"><b>Copiar</b> — No app do Kwai, toque em <i>Compartilhar</i> e selecione <i>Copiar link</i>.</div>
+        <div class="step"><b>Colar</b> — Abra o Kwibo e cole o link na caixa de download.</div>
+        <div class="step"><b>Baixar</b> — Toque no botão para salvar o vídeo em HD, sem marca d’água.</div>
+        <div class="step"><b>Compartilhar</b> — Publique no WhatsApp, Instagram, Facebook e Status com apenas um toque.</div>
+      </div>
+      <div style="margin-top:12px">
+        <a class="cta" href="https://play.google.com/store/apps/details?id=com.kwai.video.downloader.nowatermark" rel="nofollow noopener" target="_blank">Instalar agora — é grátis</a>
+      </div>
+    </section>
+
+    <section id="faq" class="grid" style="margin-top:28px">
+      <h2 class="title" style="font-size:28px">Perguntas frequentes</h2>
+      <details>
+        <summary>Kwibo é gratuito?</summary>
+        <p>Sim. O Kwibo é <b>100% gratuito</b> para baixar vídeos do Kwai sem marca d’água.</p>
+      </details>
+      <details>
+        <summary>Os vídeos ficam em HD?</summary>
+        <p>Sim. Priorizamos qualidade alta, mantendo áudio e imagem nítidos sempre que disponível.</p>
+      </details>
+      <details>
+        <summary>Funciona em qualquer Android?</summary>
+        <p>O Kwibo é compatível com os principais dispositivos Android modernos.</p>
+      </details>
+      <details>
+        <summary>Posso compartilhar direto para redes sociais?</summary>
+        <p>Sim. Com um toque você envia para WhatsApp, Instagram, Facebook e Status.</p>
+      </details>
+    </section>
+
+    <section class="grid" style="margin-top:28px">
+      <div class="card glass" style="padding:18px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+        <div>
+          <h3 style="margin:0 0 6px">Pronto para baixar seus vídeos do Kwai sem marca d’água?</h3>
+          <p class="subtitle" style="margin:0">Instale o Kwibo agora mesmo e comece em segundos.</p>
+        </div>
+        <a class="cta" href="https://play.google.com/store/apps/details?id=com.kwai.video.downloader.nowatermark" rel="nofollow noopener" target="_blank">Baixar na Play Store</a>
+      </div>
+    </section>
+
+    <footer class="container footer">
+      <p>© <span id="y"></span> Kwibo. Todos os direitos reservados. • <a class="mini-link" href="#" aria-disabled="true">Política de Privacidade</a> • <a class="mini-link" href="https://ttdownloader.vercel.app/kwai-downloader/privacy-policy" rel="nofollow noopener" target="_blank" aria-disabled="true">Suporte</a></p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

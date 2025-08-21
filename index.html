@@ -89,7 +89,7 @@
     .footer{opacity:.8;color:var(--muted);font-size:13px;margin:28px 0 12px}
     .grid{display:grid;gap:18px}
 
-    .logo-wrap{display:flex;align-items:center;gap:12px}
+    .logo-wrap{display:flex;align-items:center;gap:12px;cursor:pointer}
     .logo{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg, rgba(124,58,237,.9), rgba(34,211,238,.9));box-shadow:0 10px 24px rgba(2,6,23,.25)}
     .logo span{font-weight:800;color:#0b1020}
 
@@ -240,6 +240,9 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementsByClassName('logo-wrap')[0].addEventListener('click', function() {
+      window.location.replace('/kwibo')
+    });
   </script>
 </body>
 </html>

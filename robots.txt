@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://krmichael.github.io/kwibo/sitemap.xml

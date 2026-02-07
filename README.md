@@ -46,7 +46,10 @@ Este projeto é otimizado para buscas relacionadas a:
 - **Como salvar vídeos do Kwai**  
 - **App para baixar vídeos do Kwai**  
 - **Kwai Downloader sem marca d’água**  
-- **Baixar vídeos HD do Kwai**  
+- **Baixar vídeos HD do Kwai**
+- **Video Downloader for Kwai**
+- **Baixar videos do kuaishou**
+- **Snack Video Downloader**
 
 ---
 

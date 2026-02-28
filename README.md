@@ -1,4 +1,4 @@
-# Kwibo - Downloader de Vídeos do Kwai Sem Marca d’Água
+# Kwibo - baixar videos do Kwai sem marca d'água
 
 [![Play Store](https://img.shields.io/badge/Download-Play%20Store-green?style=for-the-badge&logo=googleplay)](https://play.google.com/store/apps/details?id=com.kwai.video.downloader.nowatermark)
 [![Stars](https://img.shields.io/github/stars/krmichael/kwibo?style=for-the-badge)](https://github.com/krmichael/kwibo)
@@ -44,7 +44,8 @@ Além disso, oferece uma galeria exclusiva com conteúdos prontos para compartil
 
 Este projeto é otimizado para buscas relacionadas a:
 
-- **Baixar vídeos do Kwai sem marca d’água**  
+- **Baixar vídeos do Kwai sem marca d’água**
+- **baixar videos do Kwai sem marca d'água**  
 - **Download Kwai grátis**  
 - **Como salvar vídeos do Kwai**  
 - **App para baixar vídeos do Kwai**  
